@@ -7,8 +7,8 @@ and let customers track their job online. Ready-made job types with their
 checklists (oil change, brake service, full service, diagnostic).
 
 - License: LGPL-3
-- Odoo: 19.0 Community
+- Odoo: 18.0 Community
 - Depends: expodo_fieldservice
 - Author: Expodo (https://expodo.fr)
 
-One branch per Odoo version. This branch targets Odoo 19.0.
+One branch per Odoo version. This branch targets Odoo 18.0.
