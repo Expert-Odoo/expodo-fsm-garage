@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form: add a Vehicle section -->
+    <record id="view_fsm_order_form_garage" model="ir.ui.view">
+        <field name="name">expodo.fsm.order.form.garage</field>
+        <field name="model">expodo.fsm.order</field>
+        <field name="inherit_id" ref="expodo_fieldservice.view_fsm_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="before">
+                <group string="Vehicle" name="vehicle">
+                    <group>
+                        <field name="license_plate"/>
+                        <field name="vehicle_make"/>
+                        <field name="vehicle_model"/>
+                    </group>
+                    <group>
+                        <field name="vehicle_year"/>
+                        <field name="mileage_in"/>
+                        <field name="vin"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- List: add plate column -->
+    <record id="view_fsm_order_list_garage" model="ir.ui.view">
+        <field name="name">expodo.fsm.order.list.garage</field>
+        <field name="model">expodo.fsm.order</field>
+        <field name="inherit_id" ref="expodo_fieldservice.view_fsm_order_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="license_plate"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Kanban: show the plate on the card -->
+    <record id="view_fsm_order_kanban_garage" model="ir.ui.view">
+        <field name="name">expodo.fsm.order.kanban.garage</field>
+        <field name="model">expodo.fsm.order</field>
+        <field name="inherit_id" ref="expodo_fieldservice.view_fsm_order_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='fsm_type_id']" position="after">
+                <div t-if="record.license_plate.raw_value" class="mt-1">
+                    <span class="badge text-bg-secondary"><field name="license_plate"/></span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Garage app menu -->
+    <menuitem id="menu_root_garage" name="Auto Repair Field Service" sequence="48"
+              groups="expodo_fieldservice.group_fsm_technician"/>
+    <menuitem id="menu_garage_orders" name="Repair Orders"
+              parent="menu_root_garage" action="expodo_fieldservice.action_fsm_order" sequence="10"/>
+    <menuitem id="menu_garage_config" name="Configuration"
+              parent="menu_root_garage" sequence="90"
+              groups="expodo_fieldservice.group_fsm_manager"/>
+    <menuitem id="menu_garage_types" name="Intervention Types"
+              parent="menu_garage_config" action="expodo_fieldservice.action_fsm_type" sequence="10"/>
+    <menuitem id="menu_garage_stages" name="Stages"
+              parent="menu_garage_config" action="expodo_fieldservice.action_fsm_stage" sequence="20"/>
+
+</odoo>

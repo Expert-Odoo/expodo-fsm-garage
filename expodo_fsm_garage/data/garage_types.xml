@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="type_oil_change" model="expodo.fsm.type">
+            <field name="name">Oil Change</field>
+        </record>
+        <record id="type_oil_change_s1" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_oil_change"/><field name="sequence">10</field>
+            <field name="name">Drain used oil</field></record>
+        <record id="type_oil_change_s2" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_oil_change"/><field name="sequence">20</field>
+            <field name="name">Replace oil filter</field></record>
+        <record id="type_oil_change_s3" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_oil_change"/><field name="sequence">30</field>
+            <field name="name">Refill with new oil</field></record>
+        <record id="type_oil_change_s4" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_oil_change"/><field name="sequence">40</field>
+            <field name="name">Reset service light</field></record>
+
+        <record id="type_brake_service" model="expodo.fsm.type">
+            <field name="name">Brake Service</field>
+        </record>
+        <record id="type_brake_s1" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_brake_service"/><field name="sequence">10</field>
+            <field name="name">Inspect brake pads</field></record>
+        <record id="type_brake_s2" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_brake_service"/><field name="sequence">20</field>
+            <field name="name">Replace pads</field></record>
+        <record id="type_brake_s3" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_brake_service"/><field name="sequence">30</field>
+            <field name="name">Check discs and calipers</field></record>
+        <record id="type_brake_s4" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_brake_service"/><field name="sequence">40</field>
+            <field name="name">Bleed brake fluid</field></record>
+
+        <record id="type_full_service" model="expodo.fsm.type">
+            <field name="name">Full Service</field>
+        </record>
+        <record id="type_full_s1" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_full_service"/><field name="sequence">10</field>
+            <field name="name">Oil and filters</field></record>
+        <record id="type_full_s2" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_full_service"/><field name="sequence">20</field>
+            <field name="name">Check brakes and tyres</field></record>
+        <record id="type_full_s3" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_full_service"/><field name="sequence">30</field>
+            <field name="name">Top up fluids</field></record>
+        <record id="type_full_s4" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_full_service"/><field name="sequence">40</field>
+            <field name="name">Battery and lights check</field></record>
+
+        <record id="type_diagnostic" model="expodo.fsm.type">
+            <field name="name">Diagnostic</field>
+        </record>
+        <record id="type_diag_s1" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_diagnostic"/><field name="sequence">10</field>
+            <field name="name">Connect OBD scanner</field></record>
+        <record id="type_diag_s2" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_diagnostic"/><field name="sequence">20</field>
+            <field name="name">Read fault codes</field></record>
+        <record id="type_diag_s3" model="expodo.fsm.type.checklist">
+            <field name="type_id" ref="type_diagnostic"/><field name="sequence">30</field>
+            <field name="name">Road test</field></record>
+
+    </data>
+</odoo>

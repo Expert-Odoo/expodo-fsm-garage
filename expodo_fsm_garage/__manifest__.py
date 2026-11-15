@@ -1,0 +1,19 @@
+{
+    "name": "Auto Repair Field Service",
+    "summary": "Field service for auto repair shops and garages: vehicles, mileage, repair orders, invoicing",
+    "description": "Turn Odoo Community into a workshop management tool for garages and auto repair shops. Log the vehicle, its mileage and VIN, follow the repair from intake to invoice, and let customers track their job online.",
+    "version": "19.0.1.0.0",
+    "category": "Services/Field Service",
+    "license": "LGPL-3",
+    "author": "Expodo",
+    "website": "https://expodo.fr",
+    "support": "support@expodo.fr",
+    "depends": ["expodo_fieldservice"],
+    "data": [
+        "data/garage_types.xml",
+        "views/garage_views.xml",
+    ],
+    "application": True,
+    "installable": True,
+    "auto_install": False,
+}
