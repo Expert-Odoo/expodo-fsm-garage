@@ -8,6 +8,7 @@
     "author": "Expodo",
     "website": "https://expodo.fr",
     "support": "support@expodo.fr",
+    "images": ["static/description/banner.png", "static/description/icon.png"],
     "depends": ["expodo_fieldservice"],
     "data": [
         "data/garage_types.xml",
